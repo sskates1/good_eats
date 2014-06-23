@@ -16,7 +16,7 @@ ActiveRecord::Schema.define(version: 20140622155500) do
   # These are extensions that must be enabled in order to support this database
   enable_extension "plpgsql"
 
-  create_table "restraunts", force: true do |t|
+  create_table "restaurants", force: true do |t|
     t.string   "name",        null: false
     t.string   "address",     null: false
     t.string   "city",        null: false
@@ -29,9 +29,9 @@ ActiveRecord::Schema.define(version: 20140622155500) do
   end
 
   create_table "reviews", force: true do |t|
-    t.string   "rating",       null: false
-    t.string   "body",         null: false
-    t.integer  "restraunt_id", null: false
+    t.string   "rating",        null: false
+    t.string   "body",          null: false
+    t.integer  "restaurant_id", null: false
     t.datetime "created_at"
     t.datetime "updated_at"
   end

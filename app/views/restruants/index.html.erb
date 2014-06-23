@@ -1,9 +1,0 @@
-<h3>10 Newest Restraunts</h3>
-
-<ul>
-  <% @restruants.each do |restruant| %>
-    <li>
-      <a href='/restraunts/<%= restruant.id %>'><%= "#{restraunt.name} (#{restruant.city})" %></a>
-    </li>
-  <% end %>
-</ul>

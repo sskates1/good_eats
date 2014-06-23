@@ -1,0 +1,9 @@
+<h3>10 Newest Restaurants</h3>
+
+<ol>
+  <% @restaurants.each do |restaurant| %>
+    <li>
+      <a href='/restaurants/<%= restaurant.id %>'><%= "#{restaurant.name} (#{restaurant.city})" %></a>
+    </li>
+  <% end %>
+</ol>

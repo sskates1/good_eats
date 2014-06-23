@@ -1,21 +1,21 @@
-class RestrauntsController < ApplicationController
+class ReviewsController < ApplicationController
 
   def create
-    @restraunt = Restraunt.find(params[:restruant_id])
+    @restaurant = Restaurant.find(params[:restaurant_id])
     @review = Review.new(review_params)
-    @review.restraunt = @restraunt
+    @review.restaurant = @restaurant
 
     if @review.save
       flash[:notice] = "Success!"
-      redirect_to "/restraunts/#{@review.restruant_id}"
+      redirect_to "/restaurants/#{@review.restaurant_id}"
 
     elsif @review.rating.length == 0 || @review.body.length == 0
       flash[:notice] = "Body and Rating can't be blank."
-      render template: "/restraunts/show"
+      render template: "/restaurants/show"
 
     else
       flash.now[:notice] = "Your review couldn't be saved."
-      render template: "/restraunts/show"
+      render template: "/restaurants/show"
     end
   end
 
